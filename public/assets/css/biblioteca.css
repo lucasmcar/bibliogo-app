@@ -1,0 +1,182 @@
+.hda-section {
+    padding: 4rem 0 0 0; /* Ajustado padding-top para 0 e mantido padding-bottom */
+    padding-top: 60px; /* Adicionado espaçamento para evitar sobreposição do navbar */
+}
+
+.hda-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hda-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filter-section {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-label {
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    color: #2c2c2c;
+    background-color: #FFFFFF;
+}
+
+.filter-input:focus {
+    border-color: #26A69A;
+    outline: none;
+    box-shadow: 0 0 5px rgba(38, 166, 154, 0.5);
+}
+
+.library-card {
+    display: block;
+}
+
+.library-card-content {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.library-card-content:hover {
+    transform: translateY(-5px);
+}
+
+.hda-subtitle {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+.library-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.btn-bibliogo {
+    background-color: #26A69A;
+    color: #FFFFFF;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-bibliogo:hover {
+    background-color: #1D7D74;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 991px) {
+    .hda-title {
+        font-size: 2rem;
+    }
+
+    .hda-text {
+        font-size: 1rem;
+    }
+
+    .hda-section {
+        padding: 3rem 0;
+    }
+
+    .filter-section {
+        padding: 1rem;
+    }
+
+    .filter-label {
+        font-size: 0.9rem;
+    }
+
+    .filter-input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .filter-section .row > div {
+        margin-bottom: 1rem;
+    }
+
+    .hda-title {
+        font-size: 1.75rem;
+    }
+
+    .hda-text {
+        font-size: 0.9rem;
+    }
+
+    .hda-section {
+        padding: 2rem 0;
+    }
+
+    .hda-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .library-text {
+        font-size: 0.9rem;
+    }
+
+    .btn-bibliogo {
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .hda-title {
+        font-size: 1.5rem;
+    }
+
+    .hda-text {
+        font-size: 0.85rem;
+    }
+
+    .filter-section {
+        padding: 0.75rem;
+    }
+
+    .library-card-content {
+        padding: 1rem;
+    }
+
+    .btn-bibliogo {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}

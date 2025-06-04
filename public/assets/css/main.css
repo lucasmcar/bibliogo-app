@@ -1,0 +1,125 @@
+:root {
+    --primary-color: #26A69A;
+    --dark-primary: #1D7D74;
+    --text-color: #2c2c2c;
+    --background-color: #f8f5f0;
+    --card-background: #FFFFFF;
+    --navbar-background: #26A69A;
+    --footer-background: #26A69A;
+    --link-color: #FFFFFF;
+    --placeholder-color: #E0E0E0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --text-color: #E0E0E0;
+    --background-color: #1A2E2E;
+    --card-background: #2A3D3D;
+    --navbar-background: #1D7D74;
+    --footer-background: #1D7D74;
+    --link-color: #E0E0E0;
+    --placeholder-color: #B0B0B0;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-custom {
+    background-color: var(--navbar-background);
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(var(--link-color-rgb), 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link-custom {
+    color: var(--link-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link-custom:hover {
+    color: var(--dark-primary);
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--link-color);
+    height: 30px;
+    margin: 0 1rem;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border: 1px solid var(--link-color);
+    border-radius: 0.25rem;
+    background-color: rgba(var(--link-color-rgb), 0.1);
+    color: var(--link-color);
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--dark-primary);
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.75rem;
+    color: var(--link-color);
+}
+
+.social-link {
+    color: var(--link-color);
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--dark-primary);
+}
+
+.footer {
+    background-color: var(--footer-background);
+    color: var(--link-color);
+}
+
+.footer h5 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--dark-primary);
+    text-decoration: underline;
+}

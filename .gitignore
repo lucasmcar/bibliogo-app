@@ -1,0 +1,7 @@
+vendor/
+.env
+.vscode/
+/public/uploads/*
+.idea/
+/node_modules
+/assets/

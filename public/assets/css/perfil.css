@@ -1,0 +1,228 @@
+/* Estilo para a seção de Gerenciamento de Perfil */
+.gerenciar-perfil-section {
+    padding: 40px 0;
+    background-color: #1a1a1a; /* Fundo escuro no estilo Netflix */
+    color: #e0e0e0; /* Texto claro */
+}
+
+.gerenciar-perfil-section .container {
+    max-width: 80%; /* Limita a largura para melhor legibilidade */
+    margin: 0 auto;
+}
+
+.header-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hda-title {
+    font-size: 2.5rem;
+    color: #fff; /* Texto branco */
+    font-weight: 600;
+}
+
+.config-section {
+    background-color: #2a2a2a; /* Fundo um pouco mais claro que a seção principal */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    color: #e50914; /* Vermelho Netflix */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #e0e0e0; /* Texto claro */
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    background-color: #444; /* Fundo cinza escuro para inputs */
+    border: 1px solid #555;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #e50914; /* Vermelho Netflix no foco */
+}
+
+.profile-info {
+    font-size: 1rem;
+    color: #b3b3b3; /* Cinza claro para informações não editáveis */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914; /* Vermelho Netflix */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #f40612; /* Vermelho mais claro no hover */
+}
+
+.remove-btn {
+    background-color: #555; /* Cinza escuro para botões de remoção */
+    color: #e0e0e0;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #777;
+}
+
+.admin-item, .email-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Fundo cinza escuro para itens */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.email-input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #444;
+    border: 1px solid #555;
+    color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.save-btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 767.98px) {
+    .hda-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        font-size: 0.9rem;
+    }
+
+    .action-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hda-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .form-group input {
+        font-size: 0.8rem;
+    }
+
+    .action-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Novo: Estilos para a Modal */
+.modal-content {
+    background: #222;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #333;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #fff;
+}
+
+.modal-body {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.modal-footer {
+    border-top: 1px solid #333;
+}
+
+.btn-secondary-netflix {
+    background: #333;
+    color: #e0e0e0;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary-netflix:hover {
+    background: #444;
+}

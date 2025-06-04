@@ -1,0 +1,157 @@
+.content {
+  padding: 20px;
+}
+.upload-section {
+  margin-bottom: 20px;
+}
+.upload-section label {
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+.upload-section input[type="file"] {
+  margin: 10px 0;
+}
+.upload-section button {
+  background: #e50914;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.upload-section button:hover {
+  background: #f40612;
+}
+
+.edital-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e2f;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.edital-table th,
+.edital-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+.edital-table th {
+  background: #2a2a3d;
+}
+.edital-table a {
+  color: #e50914;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.edital-table a::before {
+  content: url("data:image/svg+xml;base64,..."); /* Substitua por base64 de ícone PDF */
+  margin-right: 5px;
+}
+.edital-table select {
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.approve-btn, .reject-btn, .download-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.approve-btn {
+  background-color: #e50914; /* Vermelho Netflix */
+}
+
+.download-btn {
+  background-color: #47df42; /* Vermelho Netflix */
+}
+
+.reject-btn {
+  background-color: #333; /* Cinza escuro Netflix */
+}
+
+.approve-btn:hover {
+  background-color: #f40612; /* Vermelho mais claro no hover */
+  transform: scale(1.05);
+}
+
+.download-btn:hover {
+  background-color: #34b329; /* verde mais claro no hover */
+  transform: scale(1.05);
+}
+
+.reject-btn:hover {
+  background-color: #444; /* Cinza mais claro no hover */
+  transform: scale(1.05);
+}
+
+.approve-btn:active, .reject-btn:active, .download-btn:active {
+  transform: scale(0.95); /* Efeito de clique */
+}
+
+/* Outros estilos */
+#uploadStatus {
+  margin-left: 10px;
+  color: #333;
+}
+
+#no-editais {
+  text-align: center;
+  padding: 40px;
+  background-color: #222;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Paginação Netflix */
+.pagination-netflix {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #e50914;
+}
+
+.pagination-btn.active {
+  background-color: #e50914;
+  font-weight: bold;
+}
+
+.total-count {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.success-message {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+}

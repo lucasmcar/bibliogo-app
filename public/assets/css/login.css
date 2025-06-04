@@ -1,0 +1,161 @@
+.hda-section {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh; /* Centraliza verticalmente */
+}
+
+.hda-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hda-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.login-form:hover {
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2c2c2c;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.form-control:focus {
+    border-color: #26A69A;
+    outline: none;
+    box-shadow: 0 0 5px rgba(38, 166, 154, 0.5);
+}
+
+.btn-bibliogo {
+    background-color: #26A69A;
+    color: #FFFFFF;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-bibliogo:hover {
+    background-color: #1D7D74;
+}
+
+.forgot-password {
+    color: #26A69A;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #1D7D74;
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 991px) {
+    .hda-title {
+        font-size: 2rem;
+    }
+
+    .hda-text {
+        font-size: 1rem;
+    }
+
+    .hda-section {
+        padding: 3rem 0;
+    }
+
+    .login-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hda-title {
+        font-size: 1.75rem;
+    }
+
+    .hda-text {
+        font-size: 0.9rem;
+    }
+
+    .hda-section {
+        padding: 2rem 0;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-bibliogo {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .hda-title {
+        font-size: 1.5rem;
+    }
+
+    .hda-text {
+        font-size: 0.85rem;
+    }
+
+    .hda-section {
+        padding: 1.5rem 0;
+    }
+
+    .login-form {
+        padding: 1rem;
+    }
+
+    .btn-bibliogo {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}

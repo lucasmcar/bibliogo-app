@@ -1,0 +1,526 @@
+/* Estilo geral para seções */
+.hda-section, .attractions-section, .sponsors-section {
+    background-color: #181818; /* Fundo escuro consistente */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Estilo para a seção de Atrações Confirmadas */
+.attractions-section {
+    padding: 40px 0; /* Mesmo padding das outras seções */
+    background-color: #181818; /* Mesmo fundo da seção de patrocinadores */
+    border-radius: 8px; /* Mesmo estilo da seção de patrocinadores */
+}
+
+.attractions-section .sponsors-title {
+    font-size: 2rem;
+    color: #e50914; /* Vermelho, consistente com o tema */
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Mesmo estilo do título de patrocinadores */
+}
+
+.highlight-image-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.highlight-img {
+    max-width: 500px; /* Imagem em destaque */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Garante proporção */
+}
+
+.btn-hda {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-hda:hover {
+    background-color: #f40612;
+    color: #fff;
+}
+
+/* Estilo específico para o carrossel de Atrações */
+.attractions-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.attractions-carousel .carousel-inner {
+    height: auto; /* Altura automática para evitar sobreposição */
+}
+
+.attractions-carousel .carousel-item {
+    display: flex;
+    justify-content: center;
+    opacity: 0; /* Esconde os itens inativos */
+    transition: opacity 0.5s ease; /* Transição suave */
+}
+
+.attractions-carousel .carousel-item.active {
+    opacity: 1; /* Mostra apenas o item ativo */
+}
+
+.attractions-carousel .attraction-img {
+    max-width: 200px; /* Imagens menores no carrossel */
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    object-fit: cover; /* Garante proporção */
+}
+
+.attractions-carousel .carousel-control-prev,
+.attractions-carousel .carousel-control-next {
+    width: 5%;
+}
+
+.attractions-carousel .carousel-control-prev-icon,
+.attractions-carousel .carousel-control-next-icon {
+    background-color: #e50914;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/* Estilo para a seção de Patrocinadores (dentro de col-md-4) */
+.sponsors-section {
+    background-color: #181818; /* Cinza escuro Netflix */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.sponsors-section .sponsors-title {
+    font-size: 1.5rem; /* Título menor para caber na coluna */
+    margin-bottom: 15px;
+    color: #e50914;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sponsors-carousel .carousel-inner {
+    height: 120px; /* Altura ajustada para caber na coluna */
+}
+
+.sponsors-carousel .carousel-item {
+    opacity: 0; /* Esconde os itens inativos */
+    transition: opacity 0.5s ease; /* Transição suave */
+}
+
+.sponsors-carousel .carousel-item.active {
+    opacity: 1; /* Mostra apenas o item ativo */
+}
+
+.sponsor-item {
+    text-align: center;
+    padding: 10px;
+    height: 120px; /* Altura ajustada para caber na coluna */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor-logo {
+    max-width: 100px; /* Reduzido para caber na coluna */
+    max-height: 60px; /* Reduzido para caber na coluna */
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.05); /* Efeito de hover sutil */
+}
+
+.sponsor-name {
+    font-size: 0.9rem; /* Reduzido para caber na coluna */
+    color: #b3b3b3;
+    margin-top: 5px;
+}
+
+.sponsors-carousel .carousel-indicators [data-bs-target] {
+    background-color: #e50914; /* Vermelho Netflix para bolinhas */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.sponsors-carousel .carousel-indicators .active {
+    background-color: #f40612; /* Vermelho mais claro para o ativo */
+}
+
+.sponsors-carousel .carousel-control-prev-icon,
+.sponsors-carousel .carousel-control-next-icon {
+    background-color: #e50914; /* Vermelho Netflix */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-size: 50%;
+}
+
+.sponsors-carousel .carousel-control-prev-icon:hover,
+.sponsors-carousel .carousel-control-next-icon:hover {
+    background-color: #f40612;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 767.98px) {
+    .attractions-section .sponsors-title {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+    }
+
+    .highlight-img {
+        max-width: 100%; /* Imagem ocupa a largura total em telas menores */
+        max-height: 300px; /* Reduz a altura */
+    }
+
+    .attractions-carousel .attraction-img {
+        max-width: 150px; /* Reduz o tamanho das imagens do carrossel */
+        max-height: 150px;
+    }
+
+    .attractions-carousel {
+        max-width: 100%; /* Carrossel ocupa a largura total em telas menores */
+    }
+
+    /* Ajustes para patrocinadores em telas menores */
+    .sponsors-section .sponsors-title {
+        font-size: 1.3rem;
+    }
+
+    .sponsor-item {
+        height: 100px; /* Reduz ainda mais a altura */
+    }
+
+    .sponsor-logo {
+        max-width: 80px;
+        max-height: 50px;
+    }
+
+    .sponsor-name {
+        font-size: 0.8rem;
+    }
+
+    .sponsors-carousel .carousel-inner {
+        height: 100px;
+    }
+
+    .sponsors-carousel .carousel-control-prev-icon,
+    .sponsors-carousel .carousel-control-next-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .attractions-section .sponsors-title {
+        font-size: 1.3rem;
+    }
+
+    .highlight-img {
+        max-height: 250px;
+    }
+
+    .attractions-carousel .attraction-img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    .btn-hda {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Ajustes para patrocinadores em telas muito pequenas */
+    .sponsors-section .sponsors-title {
+        font-size: 1.2rem;
+    }
+
+    .sponsor-item {
+        height: 90px;
+    }
+
+    .sponsor-logo {
+        max-width: 70px;
+        max-height: 40px;
+    }
+
+    .sponsor-name {
+        font-size: 0.7rem;
+    }
+
+    .sponsors-carousel .carousel-inner {
+        height: 90px;
+    }
+}
+
+/* Estilo para o modal no estilo Netflix */
+.modal-content {
+    background-color: #2a2a2a; /* Fundo cinza escuro */
+    color: #e0e0e0; /* Texto claro */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    background-color: #2a2a2a; /* Mesmo fundo do modal */
+    border-bottom: 1px solid #444; /* Linha divisória cinza escura */
+}
+
+.modal-title {
+    color: #e50914; /* Vermelho Netflix */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0; /* Texto claro */
+}
+
+.modal-footer {
+    background-color: #2a2a2a; /* Mesmo fundo do modal */
+    border-top: 1px solid #444; /* Linha divisória cinza escura */
+}
+
+.modal-footer .btn-secondary {
+    background-color: #444; /* Botão "Fechar" cinza escuro */
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #555; /* Cinza mais claro no hover */
+}
+
+/* Estilo do botão de fechar do modal */
+.modal-header .btn-close {
+    filter: invert(1); /* Inverte a cor para branco, para contrastar com o fundo escuro */
+    opacity: 0.8;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+
+
+
+/* Estilos para o layout em grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #181818; /* Fundo cinza escuro no estilo Netflix */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    overflow: hidden;
+    height: 100%; /* Garante que o card ocupe toda a altura disponível */
+    transition: transform 0.3s ease; /* Transição para hover */
+}
+
+.project-card:hover {
+    transform: scale(1.03); /* Efeito de hover sutil no estilo Netflix */
+}
+
+.project-media {
+    width: 100%;
+    height: 800; /* Altura fixa para consistência */
+    object-fit: cover; /* Mantém a proporção sem distorcer */
+    display: block;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; /* Bordas arredondadas no topo */
+}
+
+.card-body {
+    padding: 15px;
+    flex-grow: 0; /* Faz o conteúdo se ajustar ao espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #181818; /* Mesmo fundo do card */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #fff; /* Texto branco */
+    margin-bottom: 10px;
+    font-weight: 600; /* Peso mais forte para o título */
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #e0e0e0; /* Texto cinza claro no estilo Netflix */
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.btn-hda {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914; /* Vermelho Netflix */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hda:hover {
+    background-color: #f40612; /* Vermelho mais claro no hover */
+}
+
+.hda-section {
+    padding: 40px 0;
+    background-color: #181818; /* Fundo escuro para a seção */
+}
+
+.hda-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Texto branco */
+    font-weight: 600;
+}
+
+.hda-text {
+    font-size: 1.1rem;
+    color: #e0e0e0; /* Texto cinza claro */
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin: 30px 0 20px;
+    color: #e50914; /* Vermelho Netflix para títulos de seção */
+    font-weight: bold;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+
+/* Estilo para a seção de Shows */
+.shows-section {
+    padding: 40px 0;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+
+/* Ajuste específico para a seção de Shows */
+.shows-section .project-grid {
+    grid-template-columns: repeat(3, 1fr); /* Reduz a largura mínima dos cards */
+    gap: 27px; /* Reduz o espaçamento entre os cards */
+}
+
+.shows-section .project-media {
+    width: 100%;
+    height: 250px; /* Altura ajustada para a proporção 9:16 (200px * 1.78 ≈ 356px, arredondado para 250px para ficar menor) */
+    object-fit: contain; /* Mostra a imagem inteira sem cortar */
+    background-color: #000; /* Fundo preto para preencher o espaço ao redor da imagem */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.shows-section .show-participants {
+    font-size: 1.25rem;
+    color: #b3b3b3; /* Cinza claro no estilo Netflix */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Garante que o título da seção siga o tema Netflix */
+.section-title {
+    font-size: 1.75rem;
+    margin: 30px 0 20px;
+    color: #e50914;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Ajustes responsivos para a seção de Shows */
+@media (max-width: 767.98px) {
+    .shows-section .section-title {
+        font-size: 1.5rem;
+    }
+
+    .shows-section .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Reduz ainda mais a largura mínima */
+    }
+
+    .shows-section .project-media {
+        height: 200px; /* Proporção ajustada para telas menores (180px * 1.78 ≈ 320px, arredondado para 200px) */
+    }
+
+    .shows-section .show-participants {
+        font-size: 0.8rem;
+    }
+
+    .shows-section .project-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .shows-section .project-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    .shows-section .project-card .btn-hda {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .shows-section .section-title {
+        font-size: 1.3rem;
+    }
+
+    .shows-section .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Largura mínima ainda menor */
+    }
+
+    .shows-section .project-media {
+        height: 180px; /* Proporção ajustada para telas pequenas (160px * 1.78 ≈ 284px, arredondado para 180px) */
+    }
+
+    .shows-section .show-participants {
+        font-size: 0.7rem;
+    }
+
+    .shows-section .project-card .card-title {
+        font-size: 1rem;
+    }
+
+    .shows-section .project-card .card-text {
+        font-size: 0.8rem;
+    }
+
+    .shows-section .project-card .btn-hda {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+}
