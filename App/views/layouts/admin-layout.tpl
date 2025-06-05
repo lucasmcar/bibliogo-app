@@ -440,6 +440,7 @@
 
     @js('https://code.jquery.com/jquery-3.6.0.min.js')
     @js('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+    @js('https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js')
     {{ $scripts }}
 
     <!-- Script Inline para Passar o Tempo de Expiração -->

@@ -10,7 +10,7 @@ function minifyCSS() {
         .pipe(cleanCSS())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(file => file.base))
-        .on('error', gutil.log)
+        .on('error', err => console.error('Erro ao processar CSS:', err))
         .on('data', file => {
             console.log(`Processando CSS: ${file.path}`);
         });
@@ -22,7 +22,7 @@ function minifyJS() {
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(file => file.base))
-        .on('error', gutil.log)
+        .on('error', err => console.error('Erro ao processar JS:', err))
         .on('data', file => {
             console.log(`Processando JS: ${file.path}`);
         });

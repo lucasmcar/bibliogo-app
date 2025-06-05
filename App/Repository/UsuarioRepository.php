@@ -2,16 +2,16 @@
 
 namespace App\Repository;
 
-use App\Model\User;
+use App\Model\Usuario;
 
-class UserRepository
+class UsuarioRepository
 {
 
     private $model;
 
     public function __construct()
     {
-        $this->model = new User();
+        $this->model = new Usuario();
     }
 
     public function create(array $data)

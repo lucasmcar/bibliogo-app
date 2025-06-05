@@ -4,10 +4,10 @@ namespace App\Controller;
 
 use App\Core\View\View;
 use App\Helper\InputFilterHelper;
-use App\Model\User;
 use App\Core\Security\Jwt\JwtHandler;
 use App\Core\Security\Csrf;
-use App\Repository\UserRepository;
+use App\Helper\JsonHelper;
+use App\Repository\UsuarioRepository;
 
 class UsuarioController
 {
@@ -30,18 +30,39 @@ class UsuarioController
 
     public function registrar()
     {
-        $data = [
-            'title' => 'Registrar'
-        ];
+        try {
+            $data = json_decode(file_get_contents('php://input'), true) ?? [];
 
-        $styles = [
-            '/assets/css/cria_conta.min.css'
-        ];
-        $scripts = [
-            '/assets/js/cria_conta.min.js'
-        ];
+            if (!Csrf::verifyToken($data['_csrf_token'])) {
+                header('location: /login');
+                return;
+            }
+        
+            $usuarioRepository = new UsuarioRepository();
 
-        return new View(view: 'admin/cria_conta', vars: $data, styles: $styles, scripts: $scripts, layout: 'admin-layout');
+            $usuarioRepository->create([
+                'nome' => $data['nome'],
+                'usuario' => '@'.$data['usuario'],
+                'email' => $data['email'],
+                'senha' => password_hash($data['senha'], PASSWORD_BCRYPT),
+                'tipo' => $data['tipo'],
+            ]);
+            
+            return $this->jsonResponse([
+                'success' => true,
+                'message' => 'Usuário cadastrado sucesso!',
+                'data' => []
+            ]);
+
+        } catch (\Exception $e) {
+            return $this->jsonResponse([
+                'success' => false,
+                'message' => 'Não foi possível cadastrar!',
+                'data' => [
+                    'erro' => $e->getMessage()
+                ]
+                ]);
+        }
     }
 
     public function criarUsuario()
@@ -53,7 +74,7 @@ class UsuarioController
         ]);
     }
 
-    public function insertData()
+    /*public function insertData()
     {
         $repository = new UserRepository();
 
@@ -65,9 +86,9 @@ class UsuarioController
             'usuario' => 'teste',
             'funcao' => 'admin'
         ]);
-    }
+    }*/
 
-    public function signIn()
+    /*public function signIn()
     {
         $data = InputFilterHelper::filterInputs(INPUT_POST, [
             'email',
@@ -113,7 +134,7 @@ class UsuarioController
         } else {
             header('location: /admin/login');
         }
-    }
+    }*/
 
     public function logout()
     {
@@ -205,6 +226,14 @@ class UsuarioController
         // Redireciona para a página de login
 
         header('Location: /admin/login');
+        exit;
+    }
+
+    private function jsonResponse($data, $statusCode = 200)
+    {
+        header('Content-Type: application/json');
+        http_response_code($statusCode);
+        echo  JsonHelper::toJson($data);
         exit;
     }
 }

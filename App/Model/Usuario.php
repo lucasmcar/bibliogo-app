@@ -4,19 +4,17 @@ namespace App\Model;
 use App\Model\ModelBase;
 
 
-class User extends ModelBase
+class Usuario extends ModelBase
 {
 
     protected $table = 'usuarios';
     protected $alias = 'u';
     protected $fillable = [
         'nome',
+        'usuario',
         'email',
         'senha',
-        'nome_exibicao',
-        'usuario',
-        'funcao',
-        'criado_por'
+        'tipo'
     ];
 
     /**

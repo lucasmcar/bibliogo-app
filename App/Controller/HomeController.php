@@ -34,7 +34,7 @@ class HomeController extends Controller
         ];
 
         $data = [
-            'titulo' => 'BiblioGo - A sua biblioteca',
+            'titulo' => 'BiblioGo - A sua biblioteca online',
             'livros' => [
                 ['titulo' => 'O Pequeno Principe', 'capa' => '/assets/imgs/opequeno.webp', 'criado_em' => '2025-03-22', 'slug' => 'o-pequeno-principe','curto'=> 'Um clássico atemporal sobre amizade e descoberta', 'preco'=> 15.00],
                 ['titulo' => '1984', 'capa' => '/assets/imgs/1984.webp', 'criado_em' => '2025-03-20', 'slug' => '1984', 'curto' => 'Uma distopia poderosa sobre controle e liberdade', 'preco' => 10.00],
@@ -195,7 +195,11 @@ class HomeController extends Controller
             '/assets/css/cadastro.min.css'
         ];
 
-        return new View(view: 'site/cadastro', vars: $data, styles: $styles);
+        $scripts =[
+            '/assets/js/cadastro-usuario.min.js'        
+        ];
+
+        return new View(view: 'site/cadastro', vars: $data, styles: $styles, scripts: $scripts);
     }
 
     /*public function depoimentos()
