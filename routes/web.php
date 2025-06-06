@@ -21,6 +21,9 @@ $router->group('/biblioteca', function($router) {
     $router->get('/logout', '');
     $router->group('', function($router){
         $router->get('/leitor', 'BibliotecaController', 'leitor');
+        $router->get('/leitor/busca', 'BibliotecaController', 'buscaLivrosOuBiblioteca');
+        $router->get('/ver/{id}', 'BibliotecaController', 'verBiblioteca');
+        $router->get('/livro/{id}', 'BibliotecaController', 'verLivro');
         $router->get('/meu-cartao', 'CartaoController', 'meuCartao');
         $router->get('/cadastro/nova', 'BibliotecaController', 'telaCadastroBiblioteca');
         $router->get('/minha', 'BibliotecaController', 'minhaBiblioteca');

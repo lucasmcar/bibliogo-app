@@ -11,7 +11,7 @@
     @css(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0)
     @css(https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;500&display=swap)
     {{ $styles }}
-    <title>{{ $title }}</title>
+    <title>{{ $titulo }}</title>
     <style>
     body {
         margin: 0;
@@ -325,7 +325,7 @@
 
     <div class="sidebar" id="sidebar">
         <div style="text-align: center; padding: 20px 0;">
-            <img src="/assets/imgs/bibliogo-logo.png" alt="Bibliogo" style="max-width: 150px;">
+            <img src="/assets/imgs/bibliogo.png" alt="Bibliogo" style="max-width: 150px;">
         </div>
         <ul>
             <li><a href="/admin/home" class="nav-link" data-page="home"><i class="bi bi-house-door"></i><span>Dashboard</span></a></li>

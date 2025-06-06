@@ -30,3 +30,18 @@ function generateQRCode() {
     const qrModal = new bootstrap.Modal(document.getElementById('qrCodeModal'));
     qrModal.show();
 }
+
+// Toggle para mostrar/esconder o código
+const codeElement = document.getElementById('virtual-card-code');
+const toggleButton = document.getElementById('toggle-code-btn');
+let isCodeVisible = false;
+
+if (toggleButton && codeElement) {
+    toggleButton.addEventListener('click', function () {
+        isCodeVisible = !isCodeVisible;
+        codeElement.classList.toggle('blurred', !isCodeVisible);
+        codeElement.classList.toggle('visible', isCodeVisible);
+        toggleButton.querySelector('i').className = isCodeVisible ? 'fas fa-eye-slash' : 'fas fa-eye';
+        
+    });
+}

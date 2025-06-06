@@ -3,6 +3,15 @@
     <h2 class="dashboard-title">{{ $titulo }}</h2>
     <p class="dashboard-text">{{ $subtitulo }}</p>
 
+    <!-- Seção de Busca -->
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="search-input" class="form-control" placeholder="Busque por livros ou bibliotecas...">
+            <button id="search-button" class="btn btn-bibliogo"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+    </div>
+
     <div class="dashboard-grid">
         <div class="dashboard-card">
             <h3>Aluguéis Ativos</h3>

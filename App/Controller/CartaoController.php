@@ -29,7 +29,6 @@ class CartaoController
             header('location: /biblioteca/login');
         }
         
-        $dados = JwtHandler::validateToken($_SESSION['jwt']);
         $usuarioResultado = $usuario->join('cartoes_virtuais as cv', 'usuarios.id = cv.usuario_id')->get(['usuarios.nome', 'cv.codigo', 'cv.criado_em']);
 
 

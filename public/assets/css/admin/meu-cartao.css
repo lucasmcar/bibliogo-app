@@ -126,6 +126,30 @@
     border-radius: 8px;
 }
 
+.card-code .blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+.card-code .visible {
+    filter: none;
+}
+
+.btn-toggle-code {
+    background-color: #FFFFFF;
+    color: #2c2c2c;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+    height: fit-content;
+}
+
+.btn-toggle-code:hover {
+    background-color: #f8f5f0;
+}
+
 .modal-title {
     font-family: 'Merriweather', serif;
     font-weight: 700;

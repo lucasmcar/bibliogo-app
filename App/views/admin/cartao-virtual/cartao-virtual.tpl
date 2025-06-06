@@ -10,7 +10,8 @@
                 <span class="card-type">Cartão Virtual</span>
             </div>
             <div class="card-code">
-                <span id="virtual-card-code">{{ $usuario['codigo'] }}</span>
+                <span id="virtual-card-code" class="burred">{{ $usuario['codigo'] }}</span>
+                <button id="toggle-code-btn" class="btn-toggle-code btn-secondary-bibliogo"><i class="fas fa-eye"></i></button>
             </div>
             <div class="card-footer">
                 <div class="card-info">
