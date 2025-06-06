@@ -23,7 +23,7 @@ class Usuario extends ModelBase
      * @param $lastLogin | date
      * @return true || null
      */
-    public function updateLastLogin($id, $lastLogin)
+    public function atualizaUltimoAcesso($id, $lastLogin)
     {
         $sql = "UPDATE usuarios as u SET u.ultimo_login = :ultimo_login WHERE u.id = :id";
         $this->db->prepare($sql);

@@ -17,14 +17,16 @@ $router->post('/cadastro/usuario', 'UsuarioController', 'registrar');
 
 $router->group('/biblioteca', function($router) {
     $router->get('/login', 'AdministracaoController', 'login');
+    $router->post('/autenticar', 'AdministracaoController', 'acessar');
     $router->get('/logout', '');
     $router->group('', function($router){
+        $router->get('/leitor', 'BibliotecaController', 'leitor');
         $router->get('/meu-cartao', 'CartaoController', 'meuCartao');
         $router->get('/cadastro/nova', 'BibliotecaController', 'telaCadastroBiblioteca');
         $router->get('/minha', 'BibliotecaController', 'minhaBiblioteca');
         $router->post('/cadastro/biblioteca', 'BibliotecaController', 'registrarBiblioteca');
         
-    }/*,[AuthMiddleware::class]*/);
+    },[AuthMiddleware::class]);
 });
 
 

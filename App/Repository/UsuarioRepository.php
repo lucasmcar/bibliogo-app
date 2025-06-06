@@ -26,6 +26,6 @@ class UsuarioRepository
 
     public function updateLastLogin($id, $lastLogin)
     {
-        $this->model->updateLastLogin($id, $lastLogin);
+        $this->model->atualizaUltimoAcesso($id, $lastLogin);
     }
 }

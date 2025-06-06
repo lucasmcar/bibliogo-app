@@ -127,7 +127,7 @@ class View
     {
         $output = "";
         foreach ($this->scripts as $script) {
-            $output .= "<script defer src='" . \base_url($script) . "'></script>\n";
+            $output .= "<script src='" . \base_url($script) . "'></script>\n";
         }
         return $output;
     }

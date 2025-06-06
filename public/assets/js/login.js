@@ -1,32 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('loginForm');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
+    const btnLogin = document.getElementById('btnLogin');
 
-            if (!email || !password) {
-                alert('Por favor, preencha todos os campos.');
-                return;
-            }
+    btnLogin.addEventListener('click', function () {
+        
+        const formLogin = document.getElementById('loginForm');
 
-            if (!/^\S+@\S+\.\S+$/.test(email)) {
-                alert('Por favor, insira um email válido.');
-                return;
-            }
+        const formData = new FormData(formLogin);
+        const data = Object.fromEntries(formData);
+        
+        const csrfToken = document.querySelector('input[name="_csrf_token"]')?.value;
 
-            if (password.length < 6) {
-                alert('A senha deve ter pelo menos 6 caracteres.');
-                return;
-            }
+        if (!csrfToken) {
+            console.error('Token CSRF não encontrado. Verifique o HTML.');
+        }
 
-            // Simulação de envio (substitua pela chamada real ao backend)
-            console.log('Formulário de login enviado:', { email, password });
-            alert('Login realizado com sucesso! Redirecionando...');
-            form.reset();
-            window.location.href = '/';
-        });
-    }
+        if (formLogin) {
+
+            fetch('/biblioteca/autenticar',
+                {
+                    method: 'POST',
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest",
+                        'X-CSRF-TOKEN': csrfToken,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({...data, _csrf_token: csrfToken})
+                }
+
+            ).then(resposta => resposta.json())
+            .then(data => {
+                return data;
+            })
+            .catch(error => {
+                console.error("Erro: " + error);
+            });
+
+        }
+
+    });
+
+
 });

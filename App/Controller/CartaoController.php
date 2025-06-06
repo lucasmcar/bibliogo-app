@@ -3,6 +3,10 @@
 namespace App\Controller;
 
 use App\Core\View\View;
+use App\Repository\UsuarioRepository;
+use App\Core\Security\Jwt\JwtHandler;
+use App\Model\Usuario;
+
 
 class CartaoController
 {
@@ -13,12 +17,29 @@ class CartaoController
 
     public function meuCartao()
     {
+        $data = [];
+        if (session_id()) {
+            $data = JwtHandler::validateToken($_SESSION['jwt']);
+            $usuario = new Usuario();
+        }
+
+        // Obter dados do usuário logado
+        $usuarioResultado = $usuario->findForSign($data['email']);
+        if (!$usuarioResultado || empty($usuarioResultado)) {
+            header('location: /biblioteca/login');
+        }
+        
+        $dados = JwtHandler::validateToken($_SESSION['jwt']);
+        $usuarioResultado = $usuario->join('cartoes_virtuais as cv', 'usuarios.id = cv.usuario_id')->get(['usuarios.nome', 'cv.codigo', 'cv.criado_em']);
+
+
         $data = [
             'titulo' => 'Seu Cartão Virtual Bibliogo',
             'subtitulo' => 'Apresente este cartão ao dono do livro para registrar seu aluguel.',
             'usuario' => [
-                'nome' => 'Lucas Martins de Carvalho',
-                'data_cadastro' => date('d/m/Y')
+                'nome' => $usuarioResultado[0]['nome'],
+                'data_cadastro' => date('d/m/Y', strtotime($usuarioResultado[0]['criado_em'])),
+                'codigo' => $usuarioResultado[0]['codigo']
             ]
         ];
 

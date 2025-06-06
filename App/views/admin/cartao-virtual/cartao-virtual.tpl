@@ -10,7 +10,7 @@
                 <span class="card-type">Cartão Virtual</span>
             </div>
             <div class="card-code">
-                <span id="virtual-card-code">550e8400-e29b-41d4-a716-446655440000</span>
+                <span id="virtual-card-code">{{ $usuario['codigo'] }}</span>
             </div>
             <div class="card-footer">
                 <div class="card-info">

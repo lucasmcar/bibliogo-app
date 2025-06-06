@@ -47,13 +47,12 @@ class UsuarioController
                 'senha' => password_hash($data['senha'], PASSWORD_BCRYPT),
                 'tipo' => $data['tipo'],
             ]);
-            
+
             return $this->jsonResponse([
                 'success' => true,
                 'message' => 'Usuário cadastrado sucesso!',
                 'data' => []
             ]);
-
         } catch (\Exception $e) {
             return $this->jsonResponse([
                 'success' => false,
@@ -61,32 +60,10 @@ class UsuarioController
                 'data' => [
                     'erro' => $e->getMessage()
                 ]
-                ]);
+            ]);
         }
     }
 
-    public function criarUsuario()
-    {
-        $data = InputFilterHelper::filterInputs(INPUT_POST, [
-            'nome',
-            'email',
-            'senha'
-        ]);
-    }
-
-    /*public function insertData()
-    {
-        $repository = new UserRepository();
-
-        $repository->create([
-            'nome' => 'Michelle',
-            'email' => 'teste@teste.com.br',
-            'senha' => password_hash('123456', PASSWORD_BCRYPT),
-            'foto' => '/assets/imgs/michelle.jpg',
-            'usuario' => 'teste',
-            'funcao' => 'admin'
-        ]);
-    }*/
 
     /*public function signIn()
     {

@@ -12,6 +12,7 @@ class ModelBase
     private $conditions = [];
     private $bindings = [];
     private $joins = [];
+    private $alias;
 
     public function __construct()
     {

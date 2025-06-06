@@ -18,7 +18,7 @@ class AuthMiddleware
 
         if (!$jwt) {
             http_response_code(401);
-            header('Location: /admin/login');
+            header('Location: /biblioteca/login');
             exit;
         }
 
@@ -29,7 +29,7 @@ class AuthMiddleware
             echo "Unauthorized - Invalid or expired token";
             // Opcional: Limpa a sessão se o token expirar
             unset($_SESSION['jwt']);
-            header('Location: /admin/login');
+            header('Location: /biblioteca/login');
         }
 
         // Adiciona os dados do usuário ao request
