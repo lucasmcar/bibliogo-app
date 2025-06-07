@@ -29,7 +29,7 @@
             <h3>Cartão Virtual</h3>
             <div class="metric">Ver Cartão</div>
             <span>Apresente este cartão para alugar livros.</span>
-            <a href="/biblioteca/meu-cartao" class="btn btn-bibliogo mt-3">Acessar Cartão</a>
+            <a href="/biblioteca/leitor/meu-cartao" class="btn btn-bibliogo mt-3">Acessar Cartão</a>
         </div>
     </div>
 </section>

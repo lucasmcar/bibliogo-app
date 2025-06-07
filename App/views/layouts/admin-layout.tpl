@@ -10,7 +10,7 @@
     @css(https://fonts.googleapis.com/icon?family=Material+Icons)
     @css(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0)
     @css(https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;500&display=swap)
-    {{ $styles }}
+    {{! $styles }}
     <title>{{ $titulo }}</title>
     <style>
     body {
@@ -32,7 +32,6 @@
         width: 100%;
         background: #26A69A;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding: 0 20px;
         height: 60px;
@@ -40,135 +39,105 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .sidebar {
-        position: fixed;
-        top: 60px;
-        left: -250px;
-        width: 250px;
-        height: calc(100% - 60px);
-        background: #26A69A;
-        padding: 20px;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        transition: left 0.3s ease;
-        overflow: auto;
-    }
-
-    .top-navbar h4 {
-        margin: 0;
-        font-family: 'Merriweather', serif;
-        font-weight: 700;
-        color: #FFFFFF;
-    }
-
-    .top-navbar .profile img {
-        width: 40px;
-        height: 40px;
-        border: 2px solid #1D7D74;
-        transition: transform 0.3s ease;
-    }
-
-    .top-navbar .profile img:hover {
-        transform: scale(1.1);
-    }
-
-    .sidebar.active {
-        left: 0;
-    }
-
-    .sidebar ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .sidebar li {
-        margin-bottom: 10px;
-        position: relative;
-    }
-
-    .sidebar a {
+    .navbar-menu {
         display: flex;
         align-items: center;
-        padding: 12px 15px;
+        height: 100%;
+    }
+
+    .navbar-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100%;
+    }
+
+    .navbar-menu li {
+        margin: 0 10px;
+    }
+
+    .navbar-menu a {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
         color: #FFFFFF;
         text-decoration: none;
+        font-family: 'Merriweather', serif;
         font-size: 1rem;
         font-weight: 500;
         border-radius: 5px;
         transition: background 0.3s ease, color 0.3s ease;
+        height: 100%;
     }
 
-    .sidebar a:hover,
-    .sidebar a.nav-link:hover {
+    .navbar-menu a:hover {
         background: #1D7D74;
         color: #FFFFFF;
     }
 
-    .sidebar a i {
-        margin-right: 10px;
-        font-size: 1.2rem;
+    .navbar-menu a i {
+        margin-right: 5px;
+        font-size: 1.1rem;
     }
 
-    .sidebar .dropdown-menu {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
+    .navbar-title {
+        margin: 0;
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+        color: #FFFFFF;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .navbar-profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-profile img {
+        width: 40px;
+        height: 40px;
+        border: 2px solid #1D7D74;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-profile img:hover {
+        transform: scale(1.1);
+    }
+
+    .dropdown-menu {
         background: #1D7D74;
         border: none;
         border-radius: 5px;
         padding: 0;
-        width: 100%;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1001;
     }
 
-    .sidebar li:hover > .dropdown-menu {
-        display: block;
-    }
-
-    .sidebar .dropdown-item {
+    .dropdown-item {
         color: #FFFFFF;
         padding: 10px 20px;
         font-size: 0.9rem;
         transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .sidebar .dropdown-item:hover {
+    .dropdown-item:hover {
         background: #26A69A;
         color: #FFFFFF;
-    }
-
-    .sidebar .dropdown-toggle::after {
-        margin-left: auto;
     }
 
     .main-content {
         flex: 1;
         margin-top: 60px;
-        margin-left: 0;
         padding: 40px 20px;
         min-height: calc(100vh - 60px);
-        transition: margin-left 0.3s ease;
-    }
-
-    .main-content.shifted {
-        margin-left: 250px;
     }
 
     .main-content.no-navbar {
-        margin-top: 0; /* Remove a margem superior quando o navbar não está presente */
-        min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da tela */
-    }
-
-    #toggle-sidebar {
-        background: none;
-        border: none;
-        color: #FFFFFF;
-        font-size: 1.5rem;
-        margin-right: 20px;
-        cursor: pointer;
+        margin-top: 0;
+        min-height: 100vh;
     }
 
     #loading {
@@ -191,22 +160,6 @@
         100% { transform: rotate(360deg); }
     }
 
-    /* Estilo do Contador Regressivo */
-    .session-timer {
-        position: fixed;
-        top: 70px;
-        right: 20px;
-        background: #26A69A;
-        color: #FFFFFF;
-        padding: 8px 15px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 998;
-    }
-
-    /* Estilo do Modal */
     .modal-content {
         background: #FFFFFF;
         color: #2c2c2c;
@@ -261,17 +214,36 @@
         background: #f8f5f0;
     }
 
-    /* Responsividade */
     @media (max-width: 768px) {
-        .sidebar {
-            width: 200px;
-            left: -200px;
+        .top-navbar {
+            padding: 0 10px;
+            flex-direction: column;
+            height: auto;
+            padding-bottom: 10px;
         }
-        .sidebar.active {
-            left: 0;
+        .navbar-menu {
+            flex-direction: column;
+            width: 100%;
         }
-        .main-content.shifted {
-            margin-left: 200px;
+        .navbar-menu ul {
+            flex-direction: column;
+            width: 100%;
+        }
+        .navbar-menu li {
+            margin: 5px 0;
+            width: 100%;
+        }
+        .navbar-menu a {
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-title {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        .navbar-profile img {
+            width: 35px;
+            height: 35px;
         }
         .main-content {
             padding: 20px 10px;
@@ -279,160 +251,51 @@
         .main-content.no-navbar {
             padding: 20px 10px;
         }
-        .sidebar .dropdown-menu {
-            position: static;
-            width: 100%;
-            box-shadow: none;
+    }
+
+    @media (max-width: 576px) {
+        .navbar-title {
+            font-size: 1rem;
+            text-align: left;
         }
-        .session-timer {
-            top: 60px;
-            right: 10px;
-            font-size: 0.8rem;
-            padding: 5px 10px;
+        .navbar-profile img {
+            width: 30px;
+            height: 30px;
         }
-    }
-
-    /* Scrollbar do menu */
-    .sidebar::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .sidebar::-webkit-scrollbar-track {
-        background: #f8f5f0;
-    }
-
-    .sidebar::-webkit-scrollbar-thumb {
-        background: #26A69A;
-        border-radius: 6px;
-    }
-
-    .sidebar::-webkit-scrollbar-thumb:hover {
-        background: #1D7D74;
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+        }
     }
     </style>
 </head>
 <body>
 @csrf
     <div class="top-navbar" id="top-navbar">
-        <div style="display: flex; align-items: center;">
-            <button id="toggle-sidebar"><i class="bi bi-list"></i></button>
-            <h4 class="text-white p-3">Painel Administrativo - Bibliogo</h4>
+        <div class="navbar-menu">
+            <ul>
+                <li><a href="/leitor/dashboard"><i class="bi bi-house-door"></i> Dashboard</a></li>
+                <li><a href="/biblioteca/leitor/alugueis/ativos"><i class="bi bi-cart-check"></i> Aluguéis Ativos</a></li>
+                <li><a href="/biblioteca/leitor/historico"><i class="bi bi-clock-history"></i> Histórico</a></li>
+                <li><a href="/biblioteca/leitor/meu-cartao"><i class="bi bi-credit-card"></i> Cartão</a></li>
+            </ul>
         </div>
-        <div class="profile">
+        <div class="navbar-title">Painel do Leitor - Bibliogo</div>
+        <div class="navbar-profile">
             <img src="{{ $_SESSION['foto'] ? $_SESSION['foto'] : '/assets/imgs/default.jpg' }}" alt="Perfil" class="rounded-circle">
-        </div>
-    </div>
-
-    <div class="sidebar" id="sidebar">
-        <div style="text-align: center; padding: 20px 0;">
-            <img src="/assets/imgs/bibliogo.png" alt="Bibliogo" style="max-width: 150px;">
-        </div>
-        <ul>
-            <li><a href="/admin/home" class="nav-link" data-page="home"><i class="bi bi-house-door"></i><span>Dashboard</span></a></li>
-            
-            <!-- Gerenciamento de Usuários -->
-            <li>
-                <a href="#" class="nav-link accordion-toggle">
-                    <i class="bi bi-people"></i><span>Usuários</span>
-                    <i class="bi bi-chevron-down accordion-icon"></i>
-                </a>
-                <ul class="accordion-menu">
-                    <li><a href="#" class="nav-link" data-page="usuarios/cadastro"><i class="bi bi-person-plus-fill"></i>Cadastro</a></li>
-                    <li><a href="#" class="nav-link" data-page="usuarios/lista"><i class="bi bi-list"></i>Lista de Usuários</a></li>
+            <div class="dropdown">
+                <button class="btn btn-secondary-bibliogo dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="/leitor/perfil">Perfil</a></li>
+                    <li><a class="dropdown-item" href="/biblioteca/logout">Sair</a></li>
                 </ul>
-            </li>
-
-            <!-- Gerenciamento de Bibliotecas -->
-            <li>
-                <a href="#" class="nav-link accordion-toggle">
-                    <i class="bi bi-book"></i><span>Bibliotecas</span>
-                    <i class="bi bi-chevron-down accordion-icon"></i>
-                </a>
-                <ul class="accordion-menu">
-                    <li><a href="#" class="nav-link" data-page="bibliotecas/lista"><i class="bi bi-list"></i>Lista de Bibliotecas</a></li>
-                    <li><a href="#" class="nav-link" data-page="bibliotecas/estatisticas"><i class="bi bi-bar-chart"></i>Estatísticas</a></li>
-                </ul>
-            </li>
-
-            <!-- Gerenciamento de Livros -->
-            <li>
-                <a href="#" class="nav-link accordion-toggle">
-                    <i class="bi bi-bookshelf"></i><span>Livros</span>
-                    <i class="bi bi-chevron-down accordion-icon"></i>
-                </a>
-                <ul class="accordion-menu">
-                    <li><a href="#" class="nav-link" data-page="livros/cadastro"><i class="bi bi-bookmark-plus"></i>Cadastro</a></li>
-                    <li><a href="#" class="nav-link" data-page="livros/lista"><i class="bi bi-list"></i>Lista de Livros</a></li>
-                </ul>
-            </li>
-
-            <!-- Gerenciamento de Aluguéis -->
-            <li>
-                <a href="#" class="nav-link accordion-toggle">
-                    <i class="bi bi-cart-check"></i><span>Aluguéis</span>
-                    <i class="bi bi-chevron-down accordion-icon"></i>
-                </a>
-                <ul class="accordion-menu">
-                    <li><a href="#" class="nav-link" data-page="alugueis/lista"><i class="bi bi-list"></i>Lista de Aluguéis</a></li>
-                    <li><a href="#" class="nav-link" data-page="alugueis/pendentes"><i class="bi bi-clock"></i>Pendentes</a></li>
-                </ul>
-            </li>
-
-            <!-- Relatórios -->
-            <li>
-                <a href="#" class="nav-link accordion-toggle">
-                    <i class="bi bi-file-earmark-bar-graph"></i><span>Relatórios</span>
-                    <i class="bi bi-chevron-down accordion-icon"></i>
-                </a>
-                <ul class="accordion-menu">
-                    <li><a href="#" class="nav-link" data-page="relatorios/geral"><i class="bi bi-bar-chart"></i>Relatório Geral</a></li>
-                    <li><a href="#" class="nav-link" data-page="relatorios/usuarios"><i class="bi bi-people"></i>Usuários</a></li>
-                    <li><a href="#" class="nav-link" data-page="relatorios/alugueis"><i class="bi bi-cart-check"></i>Aluguéis</a></li>
-                </ul>
-            </li>
-
-            <!-- Configurações -->
-            <li>
-                <a href="#" class="nav-link accordion-toggle">
-                    <i class="bi bi-gear"></i><span>Configurações</span>
-                    <i class="bi bi-chevron-down accordion-icon"></i>
-                </a>
-                <ul class="accordion-menu">
-                    <li><a href="#" class="nav-link" data-page="perfil"><i class="bi bi-person"></i>Perfil</a></li>
-                    <li><a href="#" class="nav-link" data-page="configuracoes/site"><i class="bi bi-globe"></i>Site</a></li>
-                    <li><a href="#" class="nav-link" data-page="configuracoes/logs"><i class="bi bi-card-list"></i>Logs</a></li>
-                </ul>
-            </li>
-
-            <li><a href="/admin/logout" class="nav-link"><i class="bi bi-box-arrow-right"></i><span>Sair</span></a></li>
-        </ul>
-    </div>
-
-    <div id="loading"><i class="fas fa-spinner"></i></div>
-
-    <!-- Contador Regressivo -->
-    <div class="session-timer" id="session-timer">
-        Sessão expira em: <span id="timer">00:00:00</span>
-    </div>
-
-    <!-- Modal de Aviso -->
-    <div class="modal fade" id="session-expiry-modal" tabindex="-1" aria-labelledby="sessionExpiryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="sessionExpiryModalLabel">Sessão Expirando</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Sua sessão está prestes a expirar em <span id="modal-timer">5:00</span>. Você será deslogado automaticamente quando o tempo acabar.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary-bibliogo" data-bs-dismiss="modal">Continuar</button>
-                    <button type="button" class="btn btn-bibliogo" onclick="window.location.href='/admin/logout'">Sair Agora</button>
-                </div>
             </div>
         </div>
     </div>
+
+    <div id="loading"><i class="fas fa-spinner"></i></div>
 
     <main class="main-content" id="main-content">
         {{ $content }}
@@ -441,76 +304,32 @@
     @js('https://code.jquery.com/jquery-3.6.0.min.js')
     @js('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
     @js('https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js')
-    {{ $scripts }}
+    {{! $scripts }}
 
     <!-- Script Inline para Passar o Tempo de Expiração -->
     <script>
-        const tokenExpiry = {{ isset($_SESSION['jwt_exp']) ? $_SESSION['jwt_exp'] : 0 }};
         const isLoggedIn = {{ isset($_SESSION['jwt']) ? 'true' : 'false' }};
     </script>
 
-    <!-- Script para o Contador Regressivo e Ajuste do Navbar -->
+    <!-- Script para o Contador Regressivo -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const topNavbar = document.getElementById('top-navbar');
-            const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
-            const sessionTimer = document.getElementById('session-timer');
+            
 
-            // Ocultar top-navbar, sidebar e session-timer na página de login
+            // Ocultar top-navbar  na página de login
             if (window.location.pathname === '/biblioteca/login') {
-                if (topNavbar) {
-                    topNavbar.style.display = 'none';
-                }
-                if (sidebar) {
-                    sidebar.style.display = 'none';
-                }
-                if (sessionTimer) {
-                    sessionTimer.style.display = 'none';
-                }
-                if (mainContent) {
-                    mainContent.classList.add('no-navbar');
-                }
+                if (topNavbar) topNavbar.style.display = 'none';
+                if (mainContent) mainContent.classList.add('no-navbar');
                 return;
-            }
-
-            if (!isLoggedIn || tokenExpiry === 0) {
-                if (sessionTimer) {
-                    sessionTimer.style.display = 'none';
-                }
-                return;
-            }
-
-            const timerElement = document.getElementById('timer');
-            const modalTimerElement = document.getElementById('modal-timer');
-            const sessionExpiryModal = new bootstrap.Modal(document.getElementById('session-expiry-modal'), {
-                backdrop: 'static',
-                keyboard: false
-            });
-
-            const now = Math.floor(Date.now() / 1000);
-            let timeLeft = tokenExpiry - now;
-            let isLoggingOut = false;
-
-            if (timeLeft <= 0) {
-                sessionTimer.style.display = 'none';
-                return;
-            }
-
-            function formatTime(seconds) {
-                const hours = Math.floor(seconds / 3600);
-                const minutes = Math.floor((seconds % 3600) / 60);
-                const secs = seconds % 60;
-                return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
             }
 
             function logout() {
-                if (isLoggingOut) {
-                    return;
-                }
+                if (isLoggingOut) return;
                 isLoggingOut = true;
 
-                fetch('/biblioteca/logout', {
+                fetch('/leitor/logout', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -525,7 +344,7 @@
                         window.location.href = '/biblioteca/login?loggedOut=true';
                     } else {
                         console.error('Erro ao fazer logout:', data.message);
-                        window.location.href = '/bilbioteca/login?loggedOut=true';
+                        window.location.href = '/biblioteca/login?loggedOut=true';
                     }
                 })
                 .catch(error => {
@@ -533,30 +352,6 @@
                     window.location.href = '/biblioteca/login?loggedOut=true';
                 });
             }
-
-            const timerInterval = setInterval(function () {
-                timeLeft--;
-                timerElement.textContent = formatTime(timeLeft);
-
-                if (timeLeft === 300) {
-                    sessionExpiryModal.show();
-                    let modalTimeLeft = 300;
-                    const modalTimerInterval = setInterval(function () {
-                        modalTimeLeft--;
-                        modalTimerElement.textContent = formatTime(modalTimeLeft);
-                        if (modalTimeLeft <= 0) {
-                            clearInterval(modalTimerInterval);
-                        }
-                    }, 1000);
-                }
-
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    window.location.href = '/biblioteca/login';
-                }
-            }, 1000);
-
-            timerElement.textContent = formatTime(timeLeft);
         });
     </script>
 </body>

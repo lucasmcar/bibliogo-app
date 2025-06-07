@@ -34,14 +34,19 @@ function generateQRCode() {
 // Toggle para mostrar/esconder o código
 const codeElement = document.getElementById('virtual-card-code');
 const toggleButton = document.getElementById('toggle-code-btn');
-let isCodeVisible = false;
+let isCodeVisible = true;
 
 if (toggleButton && codeElement) {
+
+    codeElement.classList.add('blurred');
+    codeElement.classList.remove('visible');
+    toggleButton.querySelector('i').className = 'fas fa-eye';
+    
     toggleButton.addEventListener('click', function () {
         isCodeVisible = !isCodeVisible;
         codeElement.classList.toggle('blurred', !isCodeVisible);
         codeElement.classList.toggle('visible', isCodeVisible);
         toggleButton.querySelector('i').className = isCodeVisible ? 'fas fa-eye-slash' : 'fas fa-eye';
-        
+
     });
 }

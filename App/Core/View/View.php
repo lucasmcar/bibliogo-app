@@ -77,8 +77,8 @@ class View
             // Include the content in the layout
              // Replace the {{ $content }} placeholder with the actual content
             $layoutContent = file_get_contents($layoutPath);
-            $layoutContent = str_replace('{{ $styles }}', $styles, $layoutContent);
-            $layoutContent = str_replace('{{ $scripts }}', $scripts, $layoutContent);
+            $layoutContent = str_replace('{{! $styles }}', $styles, $layoutContent);
+            $layoutContent = str_replace('{{! $scripts }}', $scripts, $layoutContent);
             $layoutContent = str_replace('{{ $content }}', $content, $layoutContent);
             $content = $layoutContent;
         

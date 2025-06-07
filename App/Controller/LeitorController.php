@@ -27,7 +27,7 @@ class LeitorController
                 'livro_titulo' => 'A Arte de Viver',
                 'biblioteca_nome' => 'Estante da Maria',
                 'valor_pago' => 10.00,
-                'data_retirada' => '2025-06-03',
+                'data_retirada' => date('d/m/Y', strtotime('2025-06-03')),
                 'tempo_leitura' => 3
             ],
             [

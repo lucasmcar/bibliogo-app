@@ -13,7 +13,7 @@
     @css(/assets/css/main.css)
     @css(https://fonts.googleapis.com/icon?family=Material+Icons)
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
-    {{ $styles }}
+    {{! $styles }}
 
     <title>{{ $titulo }}</title>
     <style>
@@ -100,7 +100,7 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    {{ $scripts }}
+    {{! $scripts }}
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');

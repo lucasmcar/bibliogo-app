@@ -26,10 +26,11 @@ $router->group('/biblioteca', function($router) {
         //Leitor
         $router->get('/leitor/alugueis/ativos', 'LeitorController', 'verAtivos');
         $router->get('/leitor/alugueis/historico', 'LeitorController', 'verHistorico');
+        $router->get('/leitor/meu-cartao', 'CartaoController', 'meuCartao');
         
         $router->get('/ver/{id}', 'BibliotecaController', 'verBiblioteca');
         $router->get('/livro/{id}', 'BibliotecaController', 'verLivro');
-        $router->get('/meu-cartao', 'CartaoController', 'meuCartao');
+        
         $router->get('/cadastro/nova', 'BibliotecaController', 'telaCadastroBiblioteca');
         $router->get('/minha', 'BibliotecaController', 'minhaBiblioteca');
         $router->post('/cadastro/biblioteca', 'BibliotecaController', 'registrarBiblioteca');
