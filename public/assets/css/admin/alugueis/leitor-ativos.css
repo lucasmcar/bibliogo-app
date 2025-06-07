@@ -1,0 +1,134 @@
+.alugueis-section {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+.alugueis-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.alugueis-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.alugueis-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.aluguel-item {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aluguel-details {
+    flex: 1;
+}
+
+.aluguel-titulo {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.aluguel-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.25rem 0;
+}
+
+.label {
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.aluguel-actions {
+    margin-left: 1rem;
+}
+
+.btn-bibliogo {
+    background-color: #26A69A;
+    color: #FFFFFF;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-bibliogo:hover {
+    background-color: #1D7D74;
+}
+
+@media (max-width: 768px) {
+    .alugueis-section {
+        padding: 2rem 0;
+    }
+
+    .alugueis-title {
+        font-size: 2rem;
+    }
+
+    .alugueis-text {
+        font-size: 1rem;
+    }
+
+    .aluguel-item {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .aluguel-actions {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .btn-bibliogo {
+        width: 100%;
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .alugueis-title {
+        font-size: 1.5rem;
+    }
+
+    .alugueis-text {
+        font-size: 0.9rem;
+    }
+
+    .aluguel-titulo {
+        font-size: 1.1rem;
+    }
+
+    .aluguel-item p {
+        font-size: 0.8rem;
+    }
+
+    .btn-bibliogo {
+        font-size: 0.8rem;
+    }
+}

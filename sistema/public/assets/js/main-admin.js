@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navBar = document.querySelector(".top-navbar");
-  if (window.location.pathname == "/admin/login") {
+  if (window.location.pathname == "/biblioteca/login") {
     navBar.style.display = "none";
   }
   const sidebar = document.getElementById('sidebar');

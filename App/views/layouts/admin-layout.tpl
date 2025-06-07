@@ -510,7 +510,7 @@
                 }
                 isLoggingOut = true;
 
-                fetch('/admin/logout', {
+                fetch('/biblioteca/logout', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -522,15 +522,15 @@
                     if (data.success) {
                         localStorage.removeItem('jwt');
                         sessionStorage.removeItem('jwt');
-                        window.location.href = '/admin/login?loggedOut=true';
+                        window.location.href = '/biblioteca/login?loggedOut=true';
                     } else {
                         console.error('Erro ao fazer logout:', data.message);
-                        window.location.href = '/admin/login?loggedOut=true';
+                        window.location.href = '/bilbioteca/login?loggedOut=true';
                     }
                 })
                 .catch(error => {
                     console.error('Erro ao fazer logout:', error);
-                    window.location.href = '/admin/login?loggedOut=true';
+                    window.location.href = '/biblioteca/login?loggedOut=true';
                 });
             }
 
@@ -552,7 +552,7 @@
 
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    window.location.href = '/admin/login';
+                    window.location.href = '/biblioteca/login';
                 }
             }, 1000);
 

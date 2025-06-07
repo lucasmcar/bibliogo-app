@@ -17,13 +17,13 @@
             <h3>Aluguéis Ativos</h3>
             <div class="metric">2</div>
             <span>Veja os livros que você está alugando agora.</span>
-            <a href="/leitor/alugueis/ativos" class="btn btn-bibliogo mt-3">Ver Detalhes</a>
+            <a href="/biblioteca/leitor/alugueis/ativos" class="btn btn-bibliogo mt-3">Ver Detalhes</a>
         </div>
         <div class="dashboard-card">
             <h3>Histórico de Aluguéis</h3>
             <div class="metric">5</div>
             <span>Confira os livros que você já alugou.</span>
-            <a href="/leitor/alugueis/historico" class="btn btn-bibliogo mt-3">Ver Histórico</a>
+            <a href="/biblioteca/leitor/alugueis/historico" class="btn btn-bibliogo mt-3">Ver Histórico</a>
         </div>
         <div class="dashboard-card">
             <h3>Cartão Virtual</h3>

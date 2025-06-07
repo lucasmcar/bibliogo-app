@@ -20,8 +20,13 @@ $router->group('/biblioteca', function($router) {
     $router->post('/autenticar', 'AdministracaoController', 'acessar');
     $router->get('/logout', '');
     $router->group('', function($router){
+        //Biblioteca
         $router->get('/leitor', 'BibliotecaController', 'leitor');
         $router->get('/leitor/busca', 'BibliotecaController', 'buscaLivrosOuBiblioteca');
+        //Leitor
+        $router->get('/leitor/alugueis/ativos', 'LeitorController', 'verAtivos');
+        $router->get('/leitor/alugueis/historico', 'LeitorController', 'verHistorico');
+        
         $router->get('/ver/{id}', 'BibliotecaController', 'verBiblioteca');
         $router->get('/livro/{id}', 'BibliotecaController', 'verLivro');
         $router->get('/meu-cartao', 'CartaoController', 'meuCartao');

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navBar = document.querySelector(".top-navbar");
-  if (window.location.pathname === "/admin/login") {
+  if (window.location.pathname === "/biblioteca/login") {
     navBar.style.display = "none";
   }
 
@@ -327,18 +327,18 @@ document.addEventListener("DOMContentLoaded", function () {
           const data = JSON.parse(text); // Tenta parsear como JSON
           if (data.success) {
             console.log("Logout realizado com sucesso:", data.message);
-            window.location.href = '/admin/login';
+            window.location.href = '/biblioteca/login';
           } else {
             console.error("Erro no logout:", data.message);
           }
         } catch (e) {
           console.error("Resposta não é JSON válida:", text, e);
-          window.location.href = '/admin/login'; // Fallback para redirecionamento
+          window.location.href = '/biblioteca/login'; // Fallback para redirecionamento
         }
       })
       .catch(error => {
         console.error("Erro ao fazer logout:", error);
-        window.location.href = '/admin/login'; // Fallback para redirecionamento
+        window.location.href = '/biblioteca/login'; // Fallback para redirecionamento
       });
   }
 
